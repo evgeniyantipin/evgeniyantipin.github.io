@@ -6,4 +6,4 @@ categories: linux arch
 ---
 
 
-Get yourself a copy of the latest Arch distro from Arch Linux official website [here](https://www.archlinux.org/download/).
+Get yourself a copy of the latest Arch distro from Arch Linux official website [here](https://www.archlinux.org/download/){: target="_blank"}.
