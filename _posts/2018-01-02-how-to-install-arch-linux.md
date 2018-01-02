@@ -11,7 +11,7 @@ Get yourself a copy of the latest Arch distro from Arch Linux official website [
 Boot from the installation media you've just created and choose **Boot Arch Linux (x86_64)** option from the menu to proceed with the installation. Once you system is booted you'll be automatically logged in as a root user.
 
 
-##Installing display manager
+## Installing display manager
 ```bash
 sudo pacman -S gdm  #to install gnome display manager
 sudo systemctl enable gdm.service  #to enable display manager
