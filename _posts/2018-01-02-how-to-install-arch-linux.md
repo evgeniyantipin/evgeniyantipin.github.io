@@ -13,5 +13,6 @@ Boot from the installation media you've just created and choose **Boot Arch Linu
 ```bash
 sudo pacman -S gdm  #to install gnome display manager
 sudo systemctl enable gdm.service  #to enable display manager
+sudo systemctl start gdm #to start display manager 
 ```
 
