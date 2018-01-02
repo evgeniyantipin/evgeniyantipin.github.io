@@ -6,4 +6,4 @@ categories: arch linux
 ---
 
 
-Get yourself a copy of the latest Arch distro from Arch Linux official website [here](https://www.archlinux.org/download/){: target="_blank"}.
+Get yourself a copy of the latest Arch distro from Arch Linux official website [here](https://www.archlinux.org/download/){: target="_blank"}. After downloading the ISO make the bootable USB drive using e.g [Etcher](https://etcher.io/){: target="_blank"}.
