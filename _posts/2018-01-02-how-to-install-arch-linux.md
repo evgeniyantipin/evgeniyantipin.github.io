@@ -11,7 +11,9 @@ Get yourself a copy of the latest Arch distro from Arch Linux official website [
 Boot from the installation media you've just created and choose **Boot Arch Linux (x86_64)** option from the menu to proceed with the installation. Once you system is booted you'll be automatically logged in as a root user.
 
 ## Partitioning the disk(s)
-To check your current existing drives run `fdisk -l`. In the list find a name of the drive you want to install your system to and remember it (something like */dev/sda*). For partitioning purposes we'll be using `cfdisk` command. Type in `cfdisk /dev/sda` into the terminal.
+To check your current existing drives run `fdisk -l`. In the list find a name of the drive you want to install your system to and remember it (something like */dev/sda*). For partitioning purposes we'll be using `cfdisk` command. Type in `cfdisk /dev/sda` into the terminal and select **gpt** to create new partitioning table.
+
+
 
 
 ## Installing display manager
