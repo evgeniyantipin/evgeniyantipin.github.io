@@ -68,7 +68,6 @@ pacman -S gnome
 
 ## Installing display manager
 ```bash
-sudo pacman -S gdm  #to install gnome display manager
 sudo systemctl enable gdm.service  #to enable display manager
 sudo systemctl start gdm #to start display manager 
 ```
