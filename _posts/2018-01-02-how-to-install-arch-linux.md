@@ -26,7 +26,12 @@ pacstrap /mnt base base-devel
 ```bash
 arch-chroot /mnt
 ```
-
+Set up the password by typing `passwd`
+Open locale.gen file using nano and uncomment locale that you gonna use(*en_US.UTF-8*)
+```bash
+nano /etc/locale.gen
+```
+then save the file and run the command `locale-gen`.
 
 
 
