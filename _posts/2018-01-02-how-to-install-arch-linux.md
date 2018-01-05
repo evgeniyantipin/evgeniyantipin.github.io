@@ -35,6 +35,7 @@ Then save the file and run the command `locale-gen` to generate the chosen local
 
 Set a time zone (in my case it's Eastern US time):
 ```bash
+rm -rf /etc/localtime
 ln -s /usr/share/zoneinfo/US/Eastern /etc/localtime
 ```
 Set a hostname for you computer: `echo whatever > /etc/hostname`
