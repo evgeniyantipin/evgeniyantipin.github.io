@@ -13,7 +13,7 @@ Boot from the installation media you've just created and choose **Boot Arch Linu
 ## Partitioning and formatting the disk(s)
 To check your current existing drives run `fdisk -l`. In the list find a name of the drive you want to install your system to and remember it (something like */dev/sda*). For partitioning purposes we'll be using `cfdisk` command. Type in `cfdisk /dev/sda` into the terminal and select **gpt** to create new partitioning table. I'm gonna create three separate partitions for my system: one to use as a EFI system partition, second for swap and third for the system itself. (*/boot*, *swap* and */*). Format your primary partition using `mkfs.ext4 /dev/sda2` command.
 
-``
+``bash
 mount /dev/sda2 /mnt
 mkswap /dev/sda1
 swapon /dev/sda1
