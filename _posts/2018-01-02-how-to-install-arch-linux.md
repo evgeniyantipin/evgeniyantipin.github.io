@@ -19,6 +19,10 @@ mkswap /dev/sda1
 swapon /dev/sda1
 ```
 
+```bash
+pacstrap /mnt base base-devel
+```
+
 
 ## Installing display manager
 ```bash
