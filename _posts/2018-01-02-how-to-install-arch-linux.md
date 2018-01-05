@@ -37,7 +37,25 @@ Set a time zone (in my case it's Eastern US time):
 ```bash
 ln -s /usr/share/zoneinfo/US/Eastern /etc/localtime
 ```
+Set a hostname for you computer: `echo whatever > /etc/hostname`
 
+Download the bootloader (GRUB in this case but chose what you like) `pacman -S grub-bios`
+
+And install it on your drive (not the separate partition) `grub-install /dev/sda`
+
+Create an init file, it store info about your hardware that Linux gonna use `mkinitcpio -p linux`
+
+Generate a config file for GRUB `grub-mkconfig -o /boot/grub/grub.cfg`
+
+Generate an fstab file that allows Arch to identify your partitions `genfstab /mnt >> /mnt/etc/fstab`
+
+Finally unmount and reboot
+```bash
+umount /mnt
+reboot
+```
+
+Log in into your newly installed Arch system by typing your username (*root* in our case) and password that you've created earlier.
 
 ## Installing display manager
 ```bash
