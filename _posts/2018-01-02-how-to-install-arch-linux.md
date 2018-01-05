@@ -48,6 +48,8 @@ Create an init file, it store info about your hardware that Linux gonna use `mki
 
 Generate a config file for GRUB `grub-mkconfig -o /boot/grub/grub.cfg`
 
+Exit chroot by typing `exit`
+
 Generate an fstab file that allows Arch to identify your partitions `genfstab /mnt >> /mnt/etc/fstab`
 
 Finally unmount and reboot
