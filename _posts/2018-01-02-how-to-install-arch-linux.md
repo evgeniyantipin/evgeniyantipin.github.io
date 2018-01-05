@@ -33,6 +33,10 @@ nano /etc/locale.gen
 ```
 Then save the file and run the command `locale-gen` to generate the chosen locale(s).
 
+Set a time zone (in my case it's Eastern US time):
+```bash
+ln -s /usr/share/zoneinfo/US/Eastern /etc/localtime
+```
 
 
 ## Installing display manager
