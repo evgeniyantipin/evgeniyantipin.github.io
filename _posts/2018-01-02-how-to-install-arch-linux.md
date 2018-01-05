@@ -18,7 +18,7 @@ mount /dev/sda2 /mnt
 mkswap /dev/sda1
 swapon /dev/sda1
 ```
-
+Installing base system to our mounted /sda2 partition
 ```bash
 pacstrap /mnt base base-devel
 ```
