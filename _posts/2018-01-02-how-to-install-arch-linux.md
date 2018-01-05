@@ -60,6 +60,10 @@ reboot
 
 Log in into your newly installed Arch system by typing your username (*root* in our case) and password that you've created earlier.
 
+```bash
+pacman -S xorg-server xorg-xinit
+```
+
 ## Installing display manager
 ```bash
 sudo pacman -S gdm  #to install gnome display manager
