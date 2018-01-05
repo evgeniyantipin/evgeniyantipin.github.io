@@ -62,6 +62,7 @@ Log in into your newly installed Arch system by typing your username (*root* in 
 
 ```bash
 pacman -S xorg-server xorg-xinit
+pacman -S xorg-twm xorg-xclock xterm
 ```
 
 ## Installing display manager
