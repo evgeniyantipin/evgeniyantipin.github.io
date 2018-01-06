@@ -62,8 +62,8 @@ Log in into your newly installed Arch system by typing your username (*root* in 
 
 ```bash
 dhcpcd # to initialize internet connection
-pacman -S xorg-server xorg-xinit 
-pacman -S xorg-twm xorg-xclock xterm xorg-apps
+pacman -S xorg-server xorg-xinit xorg-twm xterm
+pacman -S xorg-xclock xorg-apps
 pacman -S gnome
 ```
 
