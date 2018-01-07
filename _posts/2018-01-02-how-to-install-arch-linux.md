@@ -58,14 +58,19 @@ umount /mnt
 reboot
 ```
 
-Log in into your newly installed Arch system by typing your username (*root* in our case) and password that you've created earlier.
+Log in into your newly installed Arch system by typing your username (*root* in our case) and password that you've created earlier. 
+
+And now we will install X server and window manager
 
 ```bash
 dhcpcd # to initialize internet connection
 pacman -S xorg-server xorg-xinit xorg-twm xterm
-pacman -S xorg-xclock xorg-apps
-pacman -S gnome
+pacman -S xorg-xclock xorg-apps # this is optional
+pacman -S i3
 ```
+
+Finally create a *.xinitrc* file in your home directory and add there `exec i3`. Now every time X server runs i3wm will execute as well. Type `startx` to run your X server and Voila you should be in your i3 tiling window manager. 
+
 
 ## Installing display manager
 ```bash
