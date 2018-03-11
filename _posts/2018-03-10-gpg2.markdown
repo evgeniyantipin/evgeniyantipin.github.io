@@ -38,3 +38,14 @@ RSA keys may be between 1024 and 4096 bits long.
 Larger is  almost  always recommended here, however your use case and  security models may dictate otherwise.
 What keysize do you want? (2048) 
 ```
+Вариант предложенный по умолчанию (2048), подойдет большинству пользователей и представлает очень высокий уровень безопасности при шифровании. 
+Далее нам нужно выбрать срок действия ключей:
+```bash
+Please specify how long the key should be valid.
+         0 = key does not expire
+      <n>  = key expires in n days
+      <n>w = key expires in n weeks
+      <n>m = key expires in n months
+      <n>y = key expires in n years
+Key is valid for? (0) 
+```
