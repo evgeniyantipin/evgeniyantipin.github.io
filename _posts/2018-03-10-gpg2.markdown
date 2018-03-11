@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Введение в GnuPG2'
+title: 'Введение в GnuPG'
 ---
 
 [comment]: # (http://www.ianatkinson.net/computing/gnupg.htm)
