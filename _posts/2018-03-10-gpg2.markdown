@@ -21,7 +21,7 @@ GnuPG - это реализация программы PGP (Pretty Good Privacy)
 
 ## Генерируем ключи
 Для того чтобы сгенерировать новую пару ключей, вам нужно дать комманду `gpg2` с аттрибутом `--full-gen-key`. 
-Вам будет предложено несколько вариантов шифрования.
+Вам будет предложено несколько вариантов шифрования:
 ```bash
 Please select what kind of key you want:
    (1) RSA and RSA (default)
@@ -30,4 +30,11 @@ Please select what kind of key you want:
    (4) RSA (sign only)
 Your selection? 
 ```
-В большинстве случаев первый вариант является подходящим. Пара RSA/RSA позволит вам подписывать ваши коммуникации, а также шифровать файлы.
+В большинстве случаев первый вариант является подходящим. 
+Пара RSA/RSA позволит вам подписывать ваши коммуникации, а также шифровать файлы.
+Следующий шаг - выбор размер ключа:
+```bash
+RSA keys may be between 1024 and 4096 bits long.  
+Larger is  almost  always recommended here, however your use case and  security models may dictate otherwise.
+What keysize do you want? (2048) 
+```
