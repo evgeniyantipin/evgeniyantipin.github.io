@@ -3,7 +3,7 @@ layout: post
 title: 'Введение в GnuPG2'
 ---
 
-[comment]: <> (http://www.ianatkinson.net/computing/gnupg.htm)
+[comment]: # (http://www.ianatkinson.net/computing/gnupg.htm)
 
 Это короткое пособие объясняет лишь некоторые базовые возможности GnuPG, больше информации можно найти воспользовшись коммандой `man gpg2`.
 
