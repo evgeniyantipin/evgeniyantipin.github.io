@@ -94,4 +94,18 @@ gpg -e -r your@email.com -o encrypted_picture.png picture.png
 file encrypted_picture.png
 encrypted_picture.png: data
 ```
+## Расшифровка файла
+Теперь когда мы успешно зашифровали файл, мы должны научиться расшифровывать его. 
+Чтобы расшифровать файлы, мы используем аргумент `-d` (decrypt), как в примере ниже:
+```bash
+gpg -d secret.txt.gpg 
+You need a passphrase to unlock the secret key for
+user: "Your Name <your@email.com>"
+1024-bit ELG-E key, ID 52443CA3, created 2018-03-11 (main key ID 0EF6B359)
 
+Enter passphrase: your passphrase 
+
+gpg: encrypted with 1024-bit ELG-E key, ID 52443CA3, created 2018-03-11
+      "Your Name <your@email.com>"
+this is my very secret file
+```
