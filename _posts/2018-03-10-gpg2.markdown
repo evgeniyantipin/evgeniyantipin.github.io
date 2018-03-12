@@ -140,4 +140,44 @@ gpg2: key 1C2BFG1D: public key "Your Name <your@email.com>" imported
 gpg2: Total number processed: 1
 gpg2:               imported: 1
 ```
+Следующая вещь, которую мы должны сделать, это установить уровень доверия новому ключу, это будет говорить gpg2 о том, насколько мы доверяем владельцу ключа:
+```bash
+gpg2 --edit-key your@email.com
+gpg (GnuPG) 2.2.5; Copyright (C) 2018 Free Software Foundation, Inc.
+This program comes with ABSOLUTELY NO WARRANTY.
+This is free software, and you are welcome to redistribute it
+under certain conditions. See the file COPYING for details.
 
+pub  1024D/1C2BFG1D  created: 2018-03-11  expires: never       usage: CS  
+                     trust: unknown       validity: unknown
+sub  2048g/A3F6ED8D  created: 2018-03-11  expires: never       usage: E   
+[ unknown] (1). Your Name <your@email.com>
+
+Command> trust
+pub  1024D/1C2BFG1D  created: 2018-03-11  expires: never       usage: CS  
+                     trust: unknown       validity: unknown
+sub  2048g/A3F6ED8D  created: 2018-03-11  expires: never       usage: E   
+[ unknown] (1). Your Name <your@email.com>
+
+Please decide how far you trust this user to correctly verify other users' keys
+(by looking at passports, checking fingerprints from different sources, etc.)
+
+  1 = I don’t know or won’t say
+  2 = I do NOT trust
+  3 = I trust marginally
+  4 = I trust fully
+  5 = I trust ultimately
+  m = back to the main menu
+
+Your decision? 5
+Do you really want to set this key to ultimate trust? (y/N) y
+                                                             
+pub  1024D/1C2BFG1D  created: 2018-03-11  expires: never       usage: CS  
+                     trust: ultimate      validity: unknown
+sub  2048g/A3F6ED8D  created: 2018-03-11  expires: never       usage: E   
+[ unknown] (1). Your Name <your@email.com>
+Please note that the shown key validity is not necessarily correct
+unless you restart the program.
+
+Command> quit
+```
