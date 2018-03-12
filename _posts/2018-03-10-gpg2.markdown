@@ -181,3 +181,7 @@ unless you restart the program.
 
 Command> quit
 ```
+Теперь, когда мы импортировали ключ и установили уровень доверия, мы можем зашифровать файл без ошибок:
+```bash
+gpg2 -e -r your@email.com vasyasecret.txt
+```
