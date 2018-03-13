@@ -203,7 +203,7 @@ gpg: encrypted with 2048-bit ELG-E key, ID A3F6ED8D, created 2018-03-11
       "Your Name <your@email.com>"
 a secret from vasya
 ```
-## Бэкапим и восстанавливаем ключи
+## Делаем резервные копии и восстанавливаем ключи
 Представьте, что вы зашифровали большие объемы важной информации, а потом ваш жесткий диск благополучно помер, вместе с вашими ключами. В подобном случае, у вас не было бы абсолютно никакой реальной возможности восстановить ваши данные.
 
 Чтобы этого не случилось, нужно иметь резервные копии ваших ключей. А для того чтобы сделать копии, нам нужно уметь экспортировать оба вида ваших ключей. Ранее мы уже рассмотрели как как импортировать и экспортировать public ключи, так что нам осталось научиться делать то же самое с private ключами.
@@ -212,4 +212,42 @@ a secret from vasya
 ```bash
 gpg2 --export -a -o mypublickey.txt your@email.com
 gpg2 --export-secret-key -a -o myprivatekey.txt your@email.com
+```
+Теперь, когда мы имеем оба наших ключа в виде файлов, мы можем их сохранить в безопасное место, или даже распечатать (вот для чего нужна была опция `-a`, файлы ключей могут быть напечатаны в текстовом формате). В случае отказа носителя на котором будет сохранена копия, мы можем набрать содержимое ключа с распечатанного листа. Самое главное здесь - это хранить всю информацию о ключах в безопасном месте. 
+
+Представим, что случилось страшное и наш жесткий диск, таки ушел в отказ. Мы достаем носитель с резервными копиями ключей и импортируем обе копии (используем атрибут `--import` для обоих ключей, gpg автоматически определит тип каждого из них):
+```bash
+gpg2 --import myprivatekey.txt
+gpg: directory `/Users/user/.gnupg' created
+gpg: new configuration file `/Users/user/.gnupg/gpg.conf' created
+gpg: WARNING: options in `/Users/user/.gnupg/gpg.conf' are not yet active during this run
+gpg: keyring `/Users/user/.gnupg/secring.gpg' created
+gpg: keyring `/Users/user/.gnupg/pubring.gpg' created
+gpg: key A3F6ED8D: secret key imported
+gpg: /Users/user/.gnupg/trustdb.gpg: trustdb created
+gpg: key 34BEE591: public key "Your Name <your@email.com>" imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+gpg:       secret keys read: 1
+gpg:   secret keys imported: 1
+gpg2 --import mypublickey.txt
+gpg: key A3F6ED8D: "Your Name <your@email.com>" 1 new signature
+gpg: Total number processed: 1
+gpg:         new signatures: 1
+```
+Вы можете видеть что когда мы импортировали первый (private) ключ, все файлы конфигураций, коллекции ключей были заново созданы, таким же образом как если бы мы использовали атрибут `--gen-key` первый раз. Все что вам осталось сделать теперь - это заново задать уровень доверия своему public ключу (вы уже знаете как это делать). 
+
+И в завершение, давайте попробуем расшифровать файл созданный нами ранее, дабы убедиться в том, что импорт private ключа прошел успешно и мы действительно можем его использовать: 
+```bash
+gpg2 -d vasyassecret.txt.gpg
+You need a passphrase to unlock the secret key for
+user: "Your Name <your@email.com>"
+
+Enter passphrase: my passphrase 
+
+2048-bit ELG-E key, ID A3F6ED8D, created 2018-03-11 (main key ID 32CDE571)
+
+gpg: encrypted with 2048-bit ELG-E key, ID A3F6ED8D, created 2018-03-11
+      "Your Name <your@email.com>"
+a secret from vasya
 ```
