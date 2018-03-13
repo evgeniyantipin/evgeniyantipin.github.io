@@ -185,3 +185,21 @@ Command> quit
 ```bash
 gpg2 -e -r your@email.com vasyasecret.txt
 ```
+И наконец, для чистоты эксперимента, давайте попробуем расшифровать этот файл на первом компьютере, дабы удостовериться в том, что все прошло успешно. И конечно же, в примере ниже видно, что мы не можем расшифровать данный файл на машине из предыдущего примера, так как на ней отсутствует private ключ, только импортированный нами ранее, public ключ:
+```bash
+gpg2 -d vasyassecret.txt.gpg
+gpg: encrypted with 2048-bit ELG-E key, ID A3F6ED8D, created 2018-03-11
+      "Your Name <your@email.com>"
+gpg: decryption failed: secret key not available
+gpg2 -d vasyassecret.txt.gpg // передаем файл на первую машину и снова пробуем
+You need a passphrase to unlock the secret key for
+user: "Your Name <your@email.com>"
+
+Enter passphrase: my passphrase 
+
+2048-bit ELG-E key, ID A3F6ED8D, created 2018-03-11 (main key ID 32CDE571)
+
+gpg: encrypted with 2048-bit ELG-E key, ID A3F6ED8D, created 2018-03-11
+      "Your Name <your@email.com>"
+a secret from vasya
+```
